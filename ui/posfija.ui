@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>240</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Conversor de Expresiones</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ======================================================================== */
+/* CONFIGURACIÓN GENERAL                                                    */
+/* ======================================================================== */
+QWidget {
+    background-color: #1e1e24;
+    color: #e0e0e6;
+    font-family: &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+/* ======================================================================== */
+/* QLABEL (Etiquetas de texto)                                              */
+/* ======================================================================== */
+QLabel {
+    background-color: transparent;
+    color: #b0b0b8;
+    font-weight: 500;
+    padding: 2px;
+}
+
+QLabel#label_2 { 
+    background-color: #2a2a32;
+    color: #00a8ff;
+    border: 1px dashed #3e3e4a;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ======================================================================== */
+/* QLINEEDIT (Campos de texto)                                              */
+/* ======================================================================== */
+QLineEdit {
+    background-color: #2a2a32;
+    color: #ffffff;
+    border: 1px solid #3e3e4a;
+    border-radius: 5px;
+    padding: 4px 10px;
+    selection-background-color: #007acc;
+}
+
+QLineEdit:hover {
+    border: 1px solid #4f4f64;
+}
+
+QLineEdit:focus {
+    border: 1px solid #00a8ff;
+    background-color: #2d2d38;
+}
+
+/* ======================================================================== */
+/* QPUSHBUTTON (Botones)                                                    */
+/* ======================================================================== */
+QPushButton {
+    background-color: #2a2a32;
+    color: #ffffff;
+    border: 1px solid #3e3e4a;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background-color: #33333d;
+    border: 1px solid #00a8ff;
+}
+
+QPushButton:pressed {
+    background-color: #22222a;
+    border: 1px solid #007acc;
+}</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>50</y>
+     <width>230</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>A * (B + C)</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>110</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Expresión infija:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>120</y>
+     <width>230</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Esperando expresión...</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>110</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Convertir</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
