@@ -1,36 +1,40 @@
 # load_conversion.py
 import sys
 from PyQt5 import QtWidgets, uic
-# Importamos la lógica que creamos previamente
 from estructuras.aplicaciones.posfija import ExpressionConverter
 
-class VentanaConversion(QtWidgets.QDialog): # <-- Cambiado a QDialog para coincidir con tu .ui
+class VentanaConversion(QtWidgets.QDialog):
     def __init__(self):
-        # 1. Inicializa el constructor padre de QDialog
         super().__init__()
-        
-        # 2. Carga los componentes del archivo .ui directamente
-        # Cambia 'tu_diseño.ui' por el nombre real de tu archivo de Qt Designer
         uic.loadUi('ui/posfija.ui', self)
         
-        # 3. Instancia de la lógica orientada a objetos (La Pila)
         self.converter = ExpressionConverter()
-        
-        # 4. Conectamos el botón usando su nombre exacto del XML: 'pushButton'
         self.pushButton.clicked.connect(self.procesar_conversion)
 
     def procesar_conversion(self):
-        """Lee el input del 'lineEdit', invoca la pila y muestra el resultado en 'label_2'."""
-        # Recuperamos la expresión infija usando el name real
+        """Lee el input, invoca la conversión y la posterior evaluación."""
         infija = self.lineEdit.text()
         
-        # Validación básica por si el campo está vacío
         if not infija.strip():
             self.label_2.setText("Ingresa una expresión")
             return
             
-        # Ejecutamos la conversión que utiliza la estructura Stack
-        posfija = self.converter.infix_to_postfix(infija)
-        
-        # Mostramos la conversión en la etiqueta real asignada por Qt: 'label_2'
-        self.label_2.setText(posfija)
+        try:
+            # 1. Convertimos de infija a posfija
+            posfija = self.converter.infix_to_postfix(infija)
+            
+            # 2. Evaluamos la expresión posfija resultante
+            resultado_numerico = self.converter.evaluate_postfix(posfija)
+            
+            # 3. Formateamos la salida para mostrar ambos datos en la misma etiqueta 'label_2'
+            # Si el resultado es entero (ej: 14.0), lo mostramos como 14
+            if resultado_numerico.is_integer():
+                resultado_numerico = int(resultado_numerico)
+                
+            texto_final = f"Posfija: {posfija}  |  Resultado: {resultado_numerico}"
+            self.label_2.setText(texto_final)
+            
+        except ZeroDivisionError:
+            self.label_2.setText("Error: División entre cero.")
+        except Exception as e:
+            self.label_2.setText(f"Error en la expresión.")

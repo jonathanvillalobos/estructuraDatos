@@ -12,12 +12,9 @@ class LoadMenu(QMainWindow):
         # 1. Carga el archivo ui/menu.ui de forma manual
         uic.loadUi("ui/menu.ui", self)
         
-        # 2. Creamos y agregamos dinámicamente la opción de la Pila al menú "Lineales"
-        # Esto evita errores si aún no la habías arrastrado en Qt Designer
-        self.actionPila = QAction("Pila (Stack)", self)
-        self.menuLineales.addAction(self.actionPila)
+    
         
-        # 3. Inicializa las conexiones
+        # 2. Inicializa las conexiones
         self.init_events()
 
     def init_events(self):
