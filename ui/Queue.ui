@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Queue Interface</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ==========================================================================
+   VENTANA PRINCIPAL
+   ========================================================================== */
+QMainWindow, QWidget {
+    background-color: #0c0c0c;
+}
+
+/* ==========================================================================
+   BOTONES (QPushButton) - TAMAÑO ULTRA MINI
+   ========================================================================== */
+QPushButton {
+    background-color: #141414;
+    color: #aaaaaa;
+    border: 1px solid #222222;
+    border-radius: 3px;
+    font-family: "Arial Narrow", "Segoe UI Condensed", sans-serif;
+    font-size: 7px; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 0px;
+    margin: 0px;
+}
+
+QPushButton:hover {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #a38a6b; 
+}
+
+QPushButton:pressed {
+    background-color: #080808;
+    border: 1px solid #73614c;
+    color: #777777;
+}
+
+QPushButton:disabled {
+    background-color: #0e0e0e;
+    color: #333333;
+    border: 1px solid #151515;
+}
+
+/* ==========================================================================
+   CAJA DE TEXTO (QLineEdit) - ESTILO BLACK COHERENTE
+   ========================================================================== */
+QLineEdit {
+    background-color: #141414;
+    color: #ffffff;
+    border: 1px solid #222222;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 10px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #a38a6b;
+    background-color: #1a1a1a;
+}
+
+/* ==========================================================================
+   ETIQUETAS DE TEXTO (QLabel) - MÁS GRANDES
+   ========================================================================== */
+QLabel {
+    color: #d4af37;
+    background-color: transparent;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 11px; 
+    font-weight: 600;
+    padding: 0px;
+}</string>
+  </property>
+  
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>56</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Enqueue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>20</y>
+     <width>56</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Dequeue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>20</y>
+     <width>56</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Firstqueue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>20</y>
+     <width>56</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lastqueue</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>20</y>
+     <width>56</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Print</string>
+   </property>
+  </widget>
+  
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>376</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Escribe un dato para agregar a la cola...</string>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>140</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI,Arial,sans-serif</family>
+     <pointsize>11</pointsize> <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Queue:</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>135</y>
+     <width>220</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>.</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

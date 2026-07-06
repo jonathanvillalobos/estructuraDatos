@@ -5,6 +5,7 @@ from PyQt5 import uic
 from load.load_lista_enlazada_simple import LoadLinkedList
 from load.load_stack import LoadStack
 from load.load_posfija import VentanaConversion
+from load.load_queue import QueueApp
 
 class LoadMenu(QMainWindow):
     def __init__(self):
@@ -25,6 +26,8 @@ class LoadMenu(QMainWindow):
         
         # Enlace de la pila (creada dinámicamente arriba)
         self.actionPila.triggered.connect(self.abrir_pila)
+        
+        self.actionCola.triggered.connect(self.abrir_cola)
 
     def abrir_lista_enlazada(self):
         # Instancia autónoma con super().__init__()
@@ -39,4 +42,8 @@ class LoadMenu(QMainWindow):
     def abrir_posfija(self):
         """Instancia autónoma con super().__init__() para el convertidor."""
         dialogo = VentanaConversion()
+        dialogo.exec_()
+        
+    def abrir_cola(self):
+        dialogo = QueueApp()
         dialogo.exec_()
