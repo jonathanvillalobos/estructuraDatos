@@ -11,97 +11,67 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menú de Estructuras de Datos</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* ==========================================================================
-   1. LINE EDIT (QLineEdit)
-   ========================================================================== */
+   <string notr="true">
+QWidget {
+    background-color: #1e1e24;
+    color: #e0e0e0;
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
 QLineEdit {
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    padding: 6px 10px;
-    color: #1f2937;
-    font-size: 13px;
-    selection-background-color: #3b82f6;
-}
-
-QLineEdit:focus {
-    border: 2px solid #3b82f6;
-    background-color: #ffffff;
-}
-
-QLineEdit:disabled {
-    background-color: #f3f4f6;
-    color: #9ca3af;
-    border: 1px solid #e5e7eb;
-}
-
-/* ==========================================================================
-   2. PUSH BUTTON (QPushButton)
-   ========================================================================== */
-QPushButton {
-    background-color: #3b82f6;
+    background-color: #33333c;
     color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    padding: 8px 16px;
-    font-size: 13px;
+    border: 1px solid #4a4a54;
+    border-radius: 5px;
+    padding: 5px 8px;
+}
+QLineEdit:focus {
+    border: 1px solid #007acc;
+    background-color: #3a3a46;
+}
+QPushButton {
+    background-color: #3a3a45;
+    color: #ffffff;
+    border: 1px solid #4f4f5d;
+    border-radius: 5px;
+    padding: 6px 12px;
     font-weight: bold;
 }
-
 QPushButton:hover {
-    background-color: #2563eb;
+    background-color: #4a4a57;
+    border: 1px solid #007acc;
 }
-
-QPushButton:pressed {
-    background-color: #1d4ed8;
-    padding-left: 18px;
-    padding-top: 9px;
-}
-
-QPushButton:disabled {
-    background-color: #bdc3c7;
-    color: #7f8c8d;
-}
-
-/* ==========================================================================
-   3. MENU BAR Y MENÚS DESPLEGABLES (QMenuBar y QMenu)
-   ========================================================================== */
 QMenuBar {
     background-color: #f3f4f6;
     border-bottom: 1px solid #d1d5db;
     color: #1f2937;
     font-size: 13px;
 }
-
 QMenuBar::item {
     background-color: transparent;
     padding: 6px 12px;
     border-radius: 4px;
 }
-
 QMenuBar::item:selected {
     background-color: #e5e7eb;
     color: #000000;
 }
-
 QMenu {
     background-color: #ffffff;
     border: 1px solid #d1d5db;
     padding: 5px 0px;
 }
-
 QMenu::item {
     padding: 6px 25px 6px 20px;
     color: #1f2937;
 }
-
 QMenu::item:selected {
     background-color: #3b82f6;
     color: #ffffff;
-}</string>
+}
+   </string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -117,7 +87,6 @@ QMenu::item:selected {
     <property name="title">
      <string>Estructuras</string>
     </property>
-    
     <widget class="QMenu" name="menuLineales">
      <property name="title">
       <string>Lineales</string>
@@ -126,14 +95,15 @@ QMenu::item:selected {
      <addaction name="actionPila"/>
      <addaction name="actionCola"/> 
     </widget>
-    
     <widget class="QMenu" name="menuAplicaciones">
      <property name="title">
       <string>Aplicaciones</string>
      </property>
      <addaction name="actionPosfija"/>
+     <addaction name="actionBanco"/> 
+     <!-- NUEVA ACCIÓN AGREGADA AQUÍ -->
+     <addaction name="actionImpresora"/>
     </widget>
-    
     <addaction name="menuLineales"/>
     <addaction name="menuAplicaciones"/>
     <addaction name="separator"/>
@@ -142,29 +112,13 @@ QMenu::item:selected {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   
-  <action name="actionLista_enlazada">
-   <property name="text">
-    <string>Lista enlazada </string>
-   </property>
-  </action>
-  
-  <action name="actionPila">
-   <property name="text">
-    <string>Pila (Stack)</string>
-   </property>
-  </action>
-
-  <action name="actionCola">
-   <property name="text">
-    <string>Cola (Queue)</string>
-   </property>
-  </action>
-
-  <action name="actionPosfija">
-   <property name="text">
-    <string>Convertidor Posfija</string>
-   </property>
-  </action>
+  <action name="actionLista_enlazada"><property name="text"><string>Lista enlazada </string></property></action>
+  <action name="actionPila"><property name="text"><string>Pila (Stack)</string></property></action>
+  <action name="actionCola"><property name="text"><string>Cola (Queue)</string></property></action>
+  <action name="actionPosfija"><property name="text"><string>Convertidor Posfija</string></property></action>
+  <action name="actionBanco"><property name="text"><string>Sistema de Banco (Cola)</string></property></action>
+  <!-- DEFINICIÓN DE LA NUEVA ACCIÓN -->
+  <action name="actionImpresora"><property name="text"><string>Sistema de Impresora (FIFO)</string></property></action>
  </widget>
  <resources/>
  <connections/>

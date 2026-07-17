@@ -6,6 +6,8 @@ from load.load_lista_enlazada_simple import LoadLinkedList
 from load.load_stack import LoadStack
 from load.load_posfija import VentanaConversion
 from load.load_queue import QueueApp
+from load.load_banco import SistemaBanco
+from load.load_impresora import VentanaColaImpresion
 
 class LoadMenu(QMainWindow):
     def __init__(self):
@@ -28,6 +30,20 @@ class LoadMenu(QMainWindow):
         self.actionPila.triggered.connect(self.abrir_pila)
         
         self.actionCola.triggered.connect(self.abrir_cola)
+        
+        self.actionBanco.triggered.connect(self.abrir_banco)
+        
+        self.actionImpresora.triggered.connect(self.abrir_impresora)
+        
+    def abrir_banco(self):
+        # Instancia autónoma con super().__init__()
+        dialogo = SistemaBanco()
+        dialogo.exec_()
+    
+    def abrir_impresora(self):
+        # Instancia autónoma con super().__init__()
+        dialogo = VentanaColaImpresion()
+        dialogo.exec_()
 
     def abrir_lista_enlazada(self):
         # Instancia autónoma con super().__init__()
